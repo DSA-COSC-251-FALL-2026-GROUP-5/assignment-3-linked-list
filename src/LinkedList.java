@@ -97,6 +97,7 @@ class LinkedList<T extends Comparable<T>> {
       // such that the garbage collector can handle the rest
       headLink = null;
       tailLink = null;
+      return true;
     }
     headLink = headLink.next;
     return true;
