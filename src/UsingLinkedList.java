@@ -16,5 +16,6 @@ class UsingLinkedList {
     linkedList.display();
     linkedList.deleteAt(10);
     linkedList.display();
+    System.out.println(linkedList.find(6));
   }
 }
