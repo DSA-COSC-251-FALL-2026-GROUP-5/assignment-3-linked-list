@@ -22,10 +22,14 @@ class LinkedList<T extends Comparable<T>> {
     // we're
     // just doing a constant amount of pointer manipulation
     // we must insert it in front of the current head
+
     Link<T> newLink = new Link<T>();
     newLink.data = newItem;
     newLink.next = headLink;
     headLink = newLink;
+    if (tailLink == null) {
+      tailLink = newLink;
+    }
     // NOTE: this also handles for the case when the headLink is null.
   }
 
@@ -36,6 +40,8 @@ class LinkedList<T extends Comparable<T>> {
     newLink.next = null;
     if (tailLink != null) {
       tailLink.next = newLink;
+    } else {
+      headLink = newLink;
     }
     tailLink = newLink;
     // NOTE: the tail.next is always going to be pointing to the null, or is exactly
