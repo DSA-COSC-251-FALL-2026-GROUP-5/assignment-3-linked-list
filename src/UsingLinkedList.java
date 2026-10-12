@@ -13,14 +13,8 @@ class UsingLinkedList {
     linkedList.insertAt(2, 2);
     linkedList.insertAt(6, 6);
     linkedList.insertAt(5, 5);
-    linkedList.deleteFirst();
-    linkedList.deleteFirst();
-    linkedList.deleteLast();
-    linkedList.deleteLast();
-    linkedList.deleteLast();
-    linkedList.deleteLast();
-    linkedList.deleteLast();
-    linkedList.deleteLast();
+    linkedList.display();
+    linkedList.deleteAt(10);
     linkedList.display();
   }
 }
