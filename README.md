@@ -4,40 +4,40 @@
 1. The LinkedList class must make use of the Link class and must have the following constructors
 and methods:
 
-(a) public LinkedList()
+~~(a) public LinkedList()~~
 
-(b) public void insertFirst(T newItem)
+~~(b) public void insertFirst(T newItem)~~
 
-(c) public void insertLast(T newItem)
+~~(c) public void insertLast(T newItem)~~
 
-(d) public void insertAt(T newItem)
+~~(d) public void insertAt(T newItem)~~
 
-(e) public boolean deleteFirst()
+~~(e) public boolean deleteFirst()~~
 
-(f) public boolean deleteLast()
+~~(f) public boolean deleteLast()~~
 
-(g) public boolean deleteAt(int index)
+~~(g) public boolean deleteAt(int index)~~
 
-(h) public boolean deleteKey(T key)
+~~(h) public boolean deleteKey(T key)~~
 
-(i) public int find(T key)
+~~(i) public int find(T key)~~
 
-(j) public boolean isEmpty()
+~~(j) public boolean isEmpty()~~
 
-(k) public String toString()
+~~(k) public String toString()~~
 
-(l) public void display()
+~~(l) public void display()~~
 
 2. The Link class must have the following attributes:
 
-(a) T data
+~~(a) T data~~
 
-(b) Link next
+~~(b) Link next~~
 
 3. The DoublyLinkedList class must make use of the DoublyLink class and must have the following
 constructors and methods:
 
-(a) public LinkedList()
+~~(a) public LinkedList()~~ 
 
 (b) public void insertFirst(T newItem)
 
@@ -65,11 +65,11 @@ constructors and methods:
 
 4. The DoublyLink class must have the following attributes:
 
-(a) T data
+~~(a) T data~~
 
-(b) Link next
+~~(b) Link next~~
 
-(c) Link previous
+~~(c) Link previous~~
 
 5. The LinkedList class and the DoublyLinkedList class must be double-ended. Meaning they must
 have head and tail pointers.

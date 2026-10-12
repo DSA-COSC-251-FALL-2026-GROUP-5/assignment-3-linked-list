@@ -50,7 +50,6 @@ class LinkedList<T extends Comparable<T>> {
 
   public void insertAt(int index, T newItem) {
     // 1.d. this will take O(n) time because it takes time to traverse to index n
-    // TODO: this parameter placement is temporary, make sure to use the right one
     // TODO: make sure that off-by-one error is dealt with because definition of
     // "index" is not clear
 
@@ -92,7 +91,7 @@ class LinkedList<T extends Comparable<T>> {
     }
 
     if (headLink.next == null) {
-      // in teh special case that there is only one item left, we must make the tail
+      // in the special case that there is only one item left, we must make the tail
       // pointer point to null to make sure that nothing else is pointing to the link,
       // such that the garbage collector can handle the rest
       headLink = null;
@@ -208,10 +207,13 @@ class LinkedList<T extends Comparable<T>> {
   }
 
   public boolean isEmpty() {
+    // 1.j. this takes O(1) time because it's it's just a pointer comparison
     return headLink == null;
   }
 
   public String toString() {
+    // 1.k. this takes O(n) time because we need to loop through the whole list to
+    // convert it into a string
     String returnString = "[";
     Link<T> currentLink = headLink;
     while (currentLink != null) {
@@ -226,6 +228,7 @@ class LinkedList<T extends Comparable<T>> {
   }
 
   public void display() {
+    // 1.l. this takes O(n) time because toString takes O(n) time
     System.out.printf("linked list: %s\r\n", toString());
     System.out.printf("headLink: %s\r\n", headLink);
     System.out.printf("tailLink: %s\r\n", tailLink);
