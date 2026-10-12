@@ -54,11 +54,13 @@ class LinkedList<T extends Comparable<T>> {
     // TODO: make sure that off-by-one error is dealt with because definition of
     // "index" is not clear
 
-    // also, when we're saying "insert at", we assume that we're inserting at the
-    // back of the node
+    if (index == 0) {
+      insertFirst(newItem);
+      return;
+    }
 
     Link<T> insertionLink = headLink;
-    for (int i = 0; i < index; i++) {
+    for (int i = 0; i < index - 1; i++) {
       if (insertionLink == null) {
         // TODO: not sure how we would handle it if we reach the end of the linked list
         return;
@@ -67,6 +69,11 @@ class LinkedList<T extends Comparable<T>> {
     }
 
     // once we're at the insertion link, we just perform insertion
+
+    if (insertionLink == null) {
+      insertLast(newItem);
+      return;
+    }
 
     Link<T> newLink = new Link<T>();
     newLink.data = newItem;
