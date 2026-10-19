@@ -4,10 +4,10 @@ class DoublyLink<T extends Comparable<T>> {
   DoublyLink<T> previous;
 
   public String toString() {
-    String returnString = String.format("Link[data=%s, next=%s, previous=%s]",
+    String returnString = String.format("Link[data=%s, previous=%s, next=%s]",
         data,
-        next == null ? "null" : "not null",
-        previous == null ? "null" : "not null");
+        previous == null ? "null" : "not null",
+        next == null ? "null" : "not null");
     return returnString;
   }
 }

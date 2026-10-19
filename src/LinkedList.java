@@ -69,7 +69,8 @@ class LinkedList<T extends Comparable<T>> {
 
     // once we're at the insertion link, we just perform insertion
 
-    if (insertionLink == null) {
+    if (insertionLink == tailLink) {
+      // if we're at the last link, just insert it at the end
       insertLast(newItem);
       return;
     }
@@ -216,12 +217,17 @@ class LinkedList<T extends Comparable<T>> {
     // convert it into a string
     String returnString = "[";
     Link<T> currentLink = headLink;
+    int i = 0;
     while (currentLink != null) {
-      returnString = returnString.concat(String.format(" %s", currentLink.data.toString()));
+      if (i != 0) {
+        returnString = returnString.concat(" ");
+      }
+      returnString = returnString.concat(currentLink.data.toString());
       if (currentLink != tailLink) {
         returnString = returnString.concat(",");
       }
       currentLink = currentLink.next;
+      i++;
     }
     returnString = returnString.concat("]");
     return returnString;

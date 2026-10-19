@@ -19,12 +19,18 @@ class DoublyLinkedList<T extends Comparable<T>> {
     DoublyLink<T> newLink = new DoublyLink<T>();
     newLink.data = newItem;
     newLink.previous = null;
+
+    if (headLink == null) {
+      newLink.next = null;
+      tailLink = newLink;
+      headLink = newLink;
+      return;
+    }
+
+    // now that we have ensured that headLink isn't null
     newLink.next = headLink;
     headLink.previous = newLink;
     headLink = newLink;
-    if (tailLink == null) {
-      tailLink = newLink;
-    }
   }
 
   public void insertLast(T newItem) {
@@ -32,12 +38,17 @@ class DoublyLinkedList<T extends Comparable<T>> {
     DoublyLink<T> newLink = new DoublyLink<T>();
     newLink.data = newItem;
     newLink.next = null;
+
+    if (tailLink == null) {
+      newLink.previous = null;
+      tailLink = newLink;
+      headLink = newLink;
+      return;
+    }
+
     newLink.previous = tailLink;
     tailLink.next = newLink;
     tailLink = newLink;
-    if (headLink == null) {
-      headLink = newLink;
-    }
   }
 
   public void insertAt(int index, T newItem) {
@@ -61,19 +72,19 @@ class DoublyLinkedList<T extends Comparable<T>> {
 
     // once we're at the insertion link, we just perform insertion
 
-    if (insertionLink == null) {
+    if (insertionLink == tailLink) {
       insertLast(newItem);
       return;
     }
 
+    // the conditions above ensures that there there is at least one node in the
+    // previous and also one node next after the insertion link
     DoublyLink<T> newLink = new DoublyLink<T>();
     newLink.data = newItem;
     newLink.next = insertionLink.next;
-    newLink.previous = insertionLink.previous;
+    insertionLink.next.previous = newLink;
+    newLink.previous = insertionLink;
     insertionLink.next = newLink;
-    if (insertionLink.next != null) {
-      insertionLink.next.previous = newLink;
-    }
   }
 
   public boolean deleteFirst() {
@@ -95,6 +106,7 @@ class DoublyLinkedList<T extends Comparable<T>> {
       return true;
     }
     headLink = headLink.next;
+    headLink.previous = null;
     return true;
   }
 
@@ -116,6 +128,7 @@ class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     tailLink = tailLink.previous;
+    tailLink.next = null;
     return true;
   }
 
@@ -158,8 +171,8 @@ class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     // we know that it's in between now
-    deletionLink.previous = deletionLink.next;
-    deletionLink.next = deletionLink.previous;
+    deletionLink.previous.next = deletionLink.next;
+    deletionLink.next.previous = deletionLink.previous;
     return true;
   }
 
@@ -201,12 +214,17 @@ class DoublyLinkedList<T extends Comparable<T>> {
     // convert it into a string
     String returnString = "[";
     DoublyLink<T> currentLink = headLink;
+    int i = 0;
     while (currentLink != null) {
-      returnString = returnString.concat(String.format(" %s", currentLink.data.toString()));
+      if (i != 0) {
+        returnString = returnString.concat(" ");
+      }
+      returnString = returnString.concat(currentLink.data.toString());
       if (currentLink != tailLink) {
         returnString = returnString.concat(",");
       }
       currentLink = currentLink.next;
+      i++;
     }
     returnString = returnString.concat("]");
     return returnString;
@@ -215,12 +233,17 @@ class DoublyLinkedList<T extends Comparable<T>> {
   public String toStringBackward() {
     String returnString = "[";
     DoublyLink<T> currentLink = tailLink;
+    int i = 0;
     while (currentLink != null) {
-      returnString = returnString.concat(String.format(" %s", currentLink.data.toString()));
-      if (currentLink != tailLink) {
+      if (i != 0) {
+        returnString = returnString.concat(" ");
+      }
+      returnString = returnString.concat(currentLink.data.toString());
+      if (currentLink != headLink) {
         returnString = returnString.concat(",");
       }
       currentLink = currentLink.previous;
+      i++;
     }
     returnString = returnString.concat("]");
     return returnString;
