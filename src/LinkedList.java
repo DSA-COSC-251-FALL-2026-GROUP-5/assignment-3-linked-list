@@ -198,7 +198,7 @@ class LinkedList<T extends Comparable<T>> {
     Link<T> currentLink = headLink;
     int index = 0;
     while (currentLink != null) {
-      if (currentLink.data == key) {
+      if (currentLink.data.compareTo(key) == 0) {
         return index;
       }
       currentLink = currentLink.next;
