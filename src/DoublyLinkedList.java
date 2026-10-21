@@ -53,7 +53,6 @@ class DoublyLinkedList<T extends Comparable<T>> {
 
   public void insertAt(int index, T newItem) {
     // 2.d. this will take O(n) time because it takes time to traverse to index n
-    // TODO: make sure that off-by-one error is dealt with because definition of
     // "index" is not clear
 
     if (index == 0) {
@@ -64,7 +63,6 @@ class DoublyLinkedList<T extends Comparable<T>> {
     DoublyLink<T> insertionLink = headLink;
     for (int i = 0; i < index - 1; i++) {
       if (insertionLink == null) {
-        // TODO: not sure how we would handle it if we reach the end of the linked list
         return;
       }
       insertionLink = insertionLink.next;
@@ -93,7 +91,6 @@ class DoublyLinkedList<T extends Comparable<T>> {
     // the garbage collector will delete the old headLink which has no references to
     // it
     if (headLink == null) {
-      // TODO: not sure whether we should return true or false
       return false;
     }
 
@@ -114,7 +111,6 @@ class DoublyLinkedList<T extends Comparable<T>> {
     // 2.f. deletion of the last index on a doubly linked list takes O(1) time
     // because we can traverse backwards from the tail to the head.
     if (tailLink == null) {
-      // TODO: not sure whether we should return true or false
       return false;
     }
 
@@ -135,8 +131,6 @@ class DoublyLinkedList<T extends Comparable<T>> {
   public boolean deleteAt(int index) {
     // 2.g. this will take O(n) time because we need to traverse through the link
     // list to find the index of insertion.
-
-    // TODO: make sure that this is the right thing to return also
     if (headLink == null) {
       return false;
     }
@@ -156,7 +150,6 @@ class DoublyLinkedList<T extends Comparable<T>> {
     // now we know that the index is greater than 0
     for (int i = 0; i < index; i++) {
       if (deletionLink == null) {
-        // TODO: make sure that this is the right thing to return
         return false;
       }
       deletionLink = deletionLink.next;

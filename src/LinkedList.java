@@ -50,7 +50,6 @@ class LinkedList<T extends Comparable<T>> {
 
   public void insertAt(int index, T newItem) {
     // 1.d. this will take O(n) time because it takes time to traverse to index n
-    // TODO: make sure that off-by-one error is dealt with because definition of
     // "index" is not clear
 
     if (index == 0) {
@@ -61,7 +60,6 @@ class LinkedList<T extends Comparable<T>> {
     Link<T> insertionLink = headLink;
     for (int i = 0; i < index - 1; i++) {
       if (insertionLink == null) {
-        // TODO: not sure how we would handle it if we reach the end of the linked list
         return;
       }
       insertionLink = insertionLink.next;
@@ -87,7 +85,6 @@ class LinkedList<T extends Comparable<T>> {
     // the garbage collector will delete the old headLink which has no references to
     // it
     if (headLink == null) {
-      // TODO: not sure whether we should return true or false
       return false;
     }
 
@@ -110,7 +107,6 @@ class LinkedList<T extends Comparable<T>> {
     // pointer to the pointer directly pointing to last element
 
     if (headLink == null) {
-      // TODO: not sure whether we should return true or false
       return false;
     }
 
@@ -137,7 +133,6 @@ class LinkedList<T extends Comparable<T>> {
     // 1.g. this will take O(n) time because we need to traverse through the link
     // list to find the index of insertion.
 
-    // TODO: make sure that this is the right thing to return also
     if (headLink == null) {
       return false;
     }
@@ -158,7 +153,6 @@ class LinkedList<T extends Comparable<T>> {
     // now we know that the index is greater than 0
     for (int i = 0; i < index; i++) {
       if (deletionLink == null) {
-        // TODO: make sure that this is the right thing to return
         return false;
       }
       beforeDeletionLink = deletionLink;

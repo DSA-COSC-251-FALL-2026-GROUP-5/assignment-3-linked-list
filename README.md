@@ -34,8 +34,8 @@ and methods:
 
 ~~(b) Link next~~
 
-3. The DoublyLinkedList class must make use of the DoublyLink class and must have the following
-constructors and methods:
+~~3. The DoublyLinkedList class must make use of the DoublyLink class and must have the following
+constructors and methods:~~
 
 ~~(a) public LinkedList()~~ 
 
@@ -71,21 +71,21 @@ constructors and methods:
 
 ~~(c) Link previous~~
 
-5. The LinkedList class and the DoublyLinkedList class must be double-ended. Meaning they must
-have head and tail pointers.
+~~5. The LinkedList class and the DoublyLinkedList class must be double-ended. Meaning they must
+have head and tail pointers.~~
 
-6. The LinkedList class and the DoublyLinkedList class must be generic classes.
+~~6. The LinkedList class and the DoublyLinkedList class must be generic classes.~~
 
-7. There must be the Link class for the LinkedList class and the DoublyLink class for the DoublyLinkedList
-class. Both the Link class and the DoublyLink class must be generic classes.
+~~7. There must be the Link class for the LinkedList class and the DoublyLink class for the DoublyLinkedList
+class. Both the Link class and the DoublyLink class must be generic classes.~~
 
-8. Change the implementation of your Stack class from assignment 2 to make use of the LinkedList
-class above. All other requirements from assignment 2 still applies to your Stack class.
+~~8. Change the implementation of your Stack class from assignment 2 to make use of the LinkedList
+class above. All other requirements from assignment 2 still applies to your Stack class.~~
 
-9. Change the implementation of your Queue class from assignment 2 to make use of the LinkedList
-class above. All other requirements from assignment 2 still applies to your Queue class.
+~~9. Change the implementation of your Queue class from assignment 2 to make use of the LinkedList
+class above. All other requirements from assignment 2 still applies to your Queue class.~~
 
-10. There must be a comment on all your methods to document its time complexity
+~~10. There must be a comment on all your methods to document its time complexity~~
 
 # AI usage
 
